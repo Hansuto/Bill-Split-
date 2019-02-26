@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Application for splitting bills among room mates",
+    "name": "Bill Split!",
     "slug": "bill-split",
     "privacy": "public",
     "sdkVersion": "32.0.0",

@@ -31,10 +31,10 @@ export class StartScreen extends React.Component{
 
     return (
       <View style={styles.container}>
-        <Text style={{fontFamily: 'Bebas', fontSize: 100, color: '#3A972D', marginBottom: 250}}>Bill Split!</Text>
+        <Text style={{fontFamily: 'Bebas', fontSize: 100, color: '#4d8157', marginBottom: 250}}>Bill Split!</Text>
         <Animation source={require('./animation-w2835-h1701.json')} autoPlay/>
         <TouchableOpacity onPress={() => this.props.navigation.navigate('getPeople')}>
-            <Text style={{fontSize:70, fontFamily:'Bebas', color: '#3A972D', textAlign:'center'}}>Press Here</Text>
+            <Text style={{fontSize:70, fontFamily:'Bebas', color: '#4d8157', textAlign:'center'}}>Press Here</Text>
         </TouchableOpacity>
       </View>
     );
@@ -45,19 +45,20 @@ export class GetPeopleScreen extends React.Component{
   render() {
     return (
       <View style={styles.container}>
-        <Text style={{ fontFamily: 'Bebas', fontSize: 50, color: '#3A972D', textAlign: 'center'}}>How many roommates do you have?</Text>
+        <Text style={{ fontFamily: 'Bebas', fontSize: 50, color: '#4d8157', textAlign: 'center'}}>How many roommates do you have?</Text>
         <View style={{ backgroundColor: '#fff', marginVertical: 20, width: 100, height: 100, elevation: 5, borderRadius: 20}}>
           <TextInput
+            autoComplete = {false}
             textAlign= 'center'
             caretHidden= {true}
             maxLength={2}
-            style={{flex:1, fontFamily: 'Bebas', fontSize: 50, color: '#3A972D',}}
+            style={{flex:1, fontFamily: 'Bebas', fontSize: 50, color: '#4d8157',}}
             keyboardType='numeric'
             onChangeText={(text) => numPeople = text}
           />
         </View>
         <TouchableOpacity onPress={() => this.props.navigation.navigate('getNames')}>
-          <Text style={{fontSize:70, fontFamily:'Bebas', color: '#3A972D', textAlign:'center'}}>➭</Text>
+          <Text style={{fontSize:70, fontFamily:'Bebas', color: '#4d8157', textAlign:'center'}}>➭</Text>
         </TouchableOpacity>
       </View>
     );
@@ -86,21 +87,22 @@ export class GetNamesScreen extends React.Component{
   render() {
     return (
       <View style={styles.container}>
-        <Text style={{ fontFamily: 'Bebas', fontSize: 50, color: '#3A972D', textAlign: 'center', marginHorizontal:15}}>What are their names?</Text>
+        <Text style={{ fontFamily: 'Bebas', fontSize: 50, color: '#4d8157', textAlign: 'center', marginHorizontal:15}}>What are their names?</Text>
         <View style={{marginVertical:10}}>
-          <Text style={{fontFamily: 'Bebas', fontSize: 20, color: '#3A972D', textAlign: 'center'}}>Roommate {this.state.index + 1}</Text>
+          <Text style={{fontFamily: 'Bebas', fontSize: 20, color: '#4d8157', textAlign: 'center'}}>Roommate {this.state.index + 1}</Text>
           <View style={{ backgroundColor: '#fff', marginVertical: 20, width: 300, height: 70, elevation: 5, borderRadius: 20}}>
             <TextInput
+              autoComplete = {false}
               textAlign= 'center'
               caretHidden= {true}
               maxLength={12}
-              style={{flex:1, fontFamily: 'Bebas', fontSize: 50, color: '#3A972D',}}
+              style={{flex:1, fontFamily: 'Bebas', fontSize: 50, color: '#4d8157',}}
               onChangeText={(text) => this.setState({nameEntry: text})}
               ref={input => {this.textInput = input}}
             />
           </View>  
           <TouchableOpacity onPress={() => {this.submitName()}}>
-            <Text style={{fontSize:70, fontFamily:'Bebas', color: '#3A972D', textAlign:'center'}}>➭</Text>
+            <Text style={{fontSize:70, fontFamily:'Bebas', color: '#4d8157', textAlign:'center'}}>➭</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -112,19 +114,19 @@ export class GetBillsScreen extends React.Component{
   render() {
     return (
      <View style={styles.container}>
-      <Text style={{ fontFamily: 'Bebas', fontSize: 50, color: '#3A972D', textAlign: 'center'}}>How many bills?</Text>
+      <Text style={{ fontFamily: 'Bebas', fontSize: 50, color: '#4d8157', textAlign: 'center'}}>How many bills?</Text>
       <View style={{ backgroundColor: '#fff', marginVertical: 20, width: 100, height: 100, elevation: 5, borderRadius: 20}}>
         <TextInput
           textAlign= 'center'
           caretHidden= {true}
           maxLength={2}
-          style={{flex:1, fontFamily: 'Bebas', fontSize: 50, color: '#3A972D',}}
+          style={{flex:1, fontFamily: 'Bebas', fontSize: 50, color: '#4d8157',}}
           keyboardType='numeric'
           onChangeText={(text) => numBills = text}
         />
       </View>
       <TouchableOpacity onPress={() => this.props.navigation.navigate('getBillDetails')}>
-        <Text style={{fontSize:70, fontFamily:'Bebas', color: '#3A972D', textAlign:'center'}}>➭</Text>
+        <Text style={{fontSize:70, fontFamily:'Bebas', color: '#4d8157', textAlign:'center'}}>➭</Text>
       </TouchableOpacity>
     </View>
     );
@@ -157,31 +159,32 @@ export class GetBillDetails extends React.Component{
     return (
       <View style={styles.container}>
         <View style={{marginVertical:10}}>
-          <Text style={{ fontFamily: 'Bebas', fontSize: 30, color: '#3A972D', textAlign: 'center'}}>Bill {this.state.index + 1} Name</Text>
+          <Text style={{ fontFamily: 'Bebas', fontSize: 30, color: '#4d8157', textAlign: 'center'}}>Bill {this.state.index + 1} Name</Text>
           <View style={{ backgroundColor: '#fff', marginTop: 5, marginBottom: 20, width: 300, height: 70, elevation: 5, borderRadius: 20}}>
             <TextInput
               textAlign= 'center'
               caretHidden= {true}
+              autoComplete = {false}
               maxLength={12}
-              style={{flex:1, fontFamily: 'Bebas', fontSize: 50, color: '#3A972D',}}
+              style={{flex:1, fontFamily: 'Bebas', fontSize: 50, color: '#4d8157',}}
               onChangeText={(text) => this.setState({nameEntry: text})}
               ref={input => {this.textInput = input}}
             />
           </View>
-          <Text style={{ fontFamily: 'Bebas', fontSize: 30, color: '#3A972D', textAlign: 'center'}}>Price</Text>
+          <Text style={{ fontFamily: 'Bebas', fontSize: 30, color: '#4d8157', textAlign: 'center'}}>Price</Text>
           <View style={{ backgroundColor: '#fff', marginTop: 5, marginBottom: 20, width: 300, height: 70, elevation: 5, borderRadius: 20}}>
             <TextInput
               textAlign= 'center'
               caretHidden= {true}
-              maxLength={7}
+              maxLength={8}
               keyboardType='number-pad'
-              style={{flex:1, fontFamily: 'Bebas', fontSize: 50, color: '#3A972D',}}
+              style={{flex:1, fontFamily: 'Bebas', fontSize: 50, color: '#4d8157',}}
               onChangeText={(num) => this.setState({price: num})}
               ref={input => {this.textInput2 = input}}
             />
           </View>
           <TouchableOpacity onPress={() => {this.submitBill()}}>
-            <Text style={{fontSize:70, fontFamily:'Bebas', color: '#3A972D', textAlign:'center'}}>➭</Text>
+            <Text style={{fontSize:70, fontFamily:'Bebas', color: '#4d8157', textAlign:'center'}}>➭</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -210,9 +213,9 @@ export class GetAssignScreen extends React.Component{
   render() {
     return (
       <View style={styles.container}>
-        <Text style={{ fontFamily: 'Bebas', fontSize: 50, color: '#3A972D', textAlign: 'center', marginHorizontal: 15}}>Who pays for {billNames[this.state.index]}?</Text>
+        <Text style={{ fontFamily: 'Bebas', fontSize: 50, color: '#4d8157', textAlign: 'center', marginHorizontal: 15}}>Who pays for {billNames[this.state.index]}?</Text>
         <Picker
-          style={{width: 150, height:180, fontFamily: 'Bebas', fontSize: 30, color: '#3A972D', textAlign: 'center'}}
+          style={{width: 150, height:180, fontFamily: 'Bebas', fontSize: 30, color: '#4d8157', textAlign: 'center'}}
           selectedValue={this.state.selected}
           itemStyle={{color:'#fff', fontSize:26}}
           onValueChange={(index) => this.setState({selected: index})}>
@@ -221,7 +224,7 @@ export class GetAssignScreen extends React.Component{
             ))}
         </Picker>
         <TouchableOpacity onPress={() => this.assignToBill()}>
-            <Text style={{fontSize:70, fontFamily:'Bebas', color: '#3A972D', textAlign:'center'}}>➭</Text>
+            <Text style={{fontSize:70, fontFamily:'Bebas', color: '#4d8157', textAlign:'center'}}>➭</Text>
         </TouchableOpacity>
       </View>
     );
@@ -290,7 +293,7 @@ export class ResultsScreen extends React.Component{
         if(result[i][j] > 0.00){
           resultComponent.push(
             <View>
-              <Text style={{ fontFamily: 'Bebas', fontSize: 30, color: '#3A972D', textAlign: 'center', marginHorizontal: 15}}>{names[i]} owes {names[j]} ${result[i][j].toFixed(2)}</Text>
+              <Text style={{ fontFamily: 'Bebas', fontSize: 30, color: '#4d8157', textAlign: 'center', marginHorizontal: 5, marginBottom: 5}}>{names[i]} owes {names[j]} ${result[i][j].toFixed(2)}</Text>
             </View>
           )
         }
@@ -314,10 +317,12 @@ export class ResultsScreen extends React.Component{
   render() {
     return (
       <View style={styles.container}>
-        <Text style={{ fontFamily: 'Bebas', fontSize: 70, color: '#3A972D', textAlign: 'center', marginHorizontal: 15}}>RESULTS</Text>
+        <Text style={{ fontFamily: 'Bebas', fontSize: 70, color: '#4d8157', textAlign: 'center', marginHorizontal: 15}}>RESULTS</Text>
+        <View style={{width: 250, height: 10, borderRadius: 20, backgroundColor: '#4d8157', marginVertical: 10}}/>
         {resultComponent}
+        <View style={{width: 250, height: 10, borderRadius: 20, backgroundColor: '#4d8157', marginVertical: 10}}/>
         <TouchableOpacity onPress={() => this.reset()}>
-            <Text style={{fontSize:50, fontFamily:'Bebas', color: '#3A972D', textAlign:'center', marginTop:30}}>Start Over</Text>
+            <Text style={{fontSize:50, fontFamily:'Bebas', color: '#4d8157', textAlign:'center', marginTop:30}}>Start Over</Text>
         </TouchableOpacity>
       </View>
     );
